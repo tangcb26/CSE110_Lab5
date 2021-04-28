@@ -2,12 +2,19 @@
 
 const img = new Image(); // used to load image from <input> and draw to canvas
 
+//getting the buttons
+let generate_bt = document.getElementsByTagName("button")[0];
+let reset_bt = document.getElementsByTagName("button")[1];
+let read_bt = document.getElementsByTagName("button")[2];
+
+//getting the canvas
+let canvas = document.getElementById('user-image');
+let ctx = canvas.getContext('2d');
+
 // Fires whenever the img object loads a new image (such as with img.src =)
 img.addEventListener('load', () => {
   // TODO
   //clear the canvas
-  let canvas = document.getElementById('user-image');
-  let ctx = canvas.getContext('2d');
   ctx.clearRect(0,0,400,400);
 
   //clear the form
@@ -18,9 +25,6 @@ img.addEventListener('load', () => {
   bottom_text.value="";
 
   //toggling buttons
-  let generate_bt = document.getElementsByTagName("button")[0];
-  let reset_bt = document.getElementsByTagName("button")[1];
-  let read_bt = document.getElementsByTagName("button")[2];
   generate_bt.disabled = false;
   reset_bt.disabled = true;
   read_bt.disabled = true;
@@ -47,8 +51,6 @@ image_input.addEventListener('change',()=>{
     img.src = "images/sky.jpg";
     img.alt= splits[splits.length-1];
 });
-
-
 
 
 /**
