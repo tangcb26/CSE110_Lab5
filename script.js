@@ -5,12 +5,36 @@ const img = new Image(); // used to load image from <input> and draw to canvas
 // Fires whenever the img object loads a new image (such as with img.src =)
 img.addEventListener('load', () => {
   // TODO
+  //clear the canvas
+  let canvas = document.getElementById('user-image');
+  let ctx = canvas.getContext('2d');
+  ctx.clearRect(0,0,400,400);
+
+  //clear the form
+  let top_text = document.getElementById('text-top');
+  let bottom_text = document.getElementById("text-bottom");
+  console.log("load_img");
+  top_text.value="";
+  bottom_text.value="";
 
   // Some helpful tips:
   // - Fill the whole Canvas with black first to add borders on non-square images, then draw on top
   // - Clear the form when a new image is selected
   // - If you draw the image to canvas here, it will update as soon as a new image is selected
 });
+
+//image-input
+let image_input = document.getElementById("image-input");
+image_input.addEventListener('change',()=>{
+    //img.src=image_input.value;
+    let filepath = image_input.value;
+    let splits = filepath.split("\\");
+    img.src = "images/sky.jpg";
+    img.alt= splits[splits.length-1];
+});
+
+
+
 
 /**
  * Takes in the dimensions of the canvas and the new image, then calculates the new
