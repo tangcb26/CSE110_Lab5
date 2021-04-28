@@ -6,6 +6,7 @@ const img = new Image(); // used to load image from <input> and draw to canvas
 let generate_bt = document.getElementsByTagName("button")[0];
 let reset_bt = document.getElementsByTagName("button")[1];
 let read_bt = document.getElementsByTagName("button")[2];
+let volumn = 1;
 
 //getting the canvas
 let canvas = document.getElementById('user-image');
@@ -20,7 +21,6 @@ img.addEventListener('load', () => {
   //clear the form
   let top_text = document.getElementById('text-top');
   let bottom_text = document.getElementById("text-bottom");
-  console.log("load_img");
   top_text.value="";
   bottom_text.value="";
 
@@ -92,3 +92,37 @@ function getDimmensions(canvasWidth, canvasHeight, imageWidth, imageHeight) {
 
   return { 'width': width, 'height': height, 'startX': startX, 'startY': startY }
 }
+
+
+//read text
+read_bt.addEventListener('click', ()=>{
+    
+});
+
+//Volumn change
+let voice_bar = document.getElementsByTagName("input")[3];
+voice_bar.addEventListener("input", ()=>{
+  volumn = voice_bar.value/100;
+  
+  let vol_icon = document.getElementsByTagName('img')[0];
+  if(voice_bar.value == 0){
+    vol_icon.src="icons/volume-level-0.svg";
+    vol_icon.alt="Volume Level 0";
+  }else if(voice_bar.value>=1 && voice_bar.value<=33){
+    vol_icon.src="icons/volume-level-1.svg";
+    vol_icon.alt="Volume Level 1";
+  }else if(voice_bar.value>=34 && voice_bar.value<=66){
+    vol_icon.src="icons/volume-level-2.svg";
+    vol_icon.alt="Volume Level 2";
+  }else if(voice_bar.value>=67 && voice_bar.value<=100){
+    vol_icon.src="icons/volume-level-3.svg";
+    vol_icon.alt="Volume Level 3";
+  }
+
+  /*
+  let utterance = new SpeechSynthesisUtterance("Hello world!");
+  utterance.volume = voice_bar.value/100;
+  speechSynthesis.speak(utterance);
+  console.log(voice_bar.value/100);
+  */
+});
