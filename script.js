@@ -17,6 +17,21 @@ img.addEventListener('load', () => {
   top_text.value="";
   bottom_text.value="";
 
+  //toggling buttons
+  let generate_bt = document.getElementsByTagName("button")[0];
+  let reset_bt = document.getElementsByTagName("button")[1];
+  let read_bt = document.getElementsByTagName("button")[2];
+  generate_bt.disabled = false;
+  reset_bt.disabled = true;
+  read_bt.disabled = true;
+
+  // - Fill the whole Canvas with black first to add borders on non-square images, then draw on top
+  ctx.fillStyle="black";
+  ctx.fillRect(0,0,400,400);
+
+  let images_D = getDimmensions(400,400,img.width,img.height);
+  ctx.drawImage(img,images_D.startX,images_D.startY,images_D.width,images_D.height);
+
   // Some helpful tips:
   // - Fill the whole Canvas with black first to add borders on non-square images, then draw on top
   // - Clear the form when a new image is selected
