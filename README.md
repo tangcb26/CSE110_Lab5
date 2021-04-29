@@ -6,7 +6,7 @@
 
 ## Part 1:
 
-LINK TO YOUR PUBLISHED SITE
+[](https://tangcb26.github.io/CSE110_Lab5/)
 
 ## Part 2:
 
