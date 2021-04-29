@@ -1,5 +1,5 @@
 // script.js
-console.log('top');
+
 const img = new Image(); // used to load image from <input> and draw to canvas
 
 //getting the buttons
@@ -17,7 +17,7 @@ let ctx = canvas.getContext('2d');
 img.addEventListener('load', () => {
   // TODO
   //clear the canvas
-  console.log('a');
+
   ctx.clearRect(0,0,400,400);
 
   //clear the form
@@ -108,7 +108,7 @@ reset_bt.addEventListener('click',()=>{
  */
 function getDimmensions(canvasWidth, canvasHeight, imageWidth, imageHeight) {
   let aspectRatio, height, width, startX, startY;
-  console.log('d');
+  
   // Get the aspect ratio, used so the picture always fits inside the canvas
   aspectRatio = imageWidth / imageHeight;
 
