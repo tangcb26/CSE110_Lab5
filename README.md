@@ -6,7 +6,7 @@
 
 ## Part 1:
 
-[](https://tangcb26.github.io/CSE110_Lab5/)
+[My Meme Generator](https://tangcb26.github.io/CSE110_Lab5/)
 
 ## Part 2:
 
